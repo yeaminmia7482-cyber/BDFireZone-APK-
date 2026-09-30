@@ -2,44 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta name="theme-color" content="#000000">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-    <style id="bd-fire-zone-splash-style">
-        #bd-fire-zone-splash {
-            position: fixed;
-            inset: 0;
-            z-index: 2147483647;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: #000;
-            transition: opacity .35s ease, visibility .35s ease;
-        }
-        #bd-fire-zone-splash img {
-            width: min(190px, 52vw);
-            height: min(190px, 52vw);
-            object-fit: contain;
-            border-radius: 28px;
-        }
-        #bd-fire-zone-splash .splash-title {
-            margin-top: 18px;
-            color: #fff;
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: .5px;
-        }
-        #bd-fire-zone-splash.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-    </style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
@@ -1701,11 +1663,6 @@
 </head>
 
 <body>
-    <div id="bd-fire-zone-splash" aria-label="BD Fire Zone">
-        <img src="logo.png" alt="BD Fire Zone">
-        <div class="splash-title">BD Fire Zone</div>
-    </div>
-
 
 <!-- BDFireZone Notice Popup -->
 <div id="bdfz-notice-overlay" role="dialog" aria-modal="true" aria-labelledby="bdfz-notice-title">
@@ -1736,7 +1693,7 @@
     <header>
         <div class="logo" onclick="navigate('home')">
             <img id="header-app-icon"
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2v5v5v5v5v5v5/s1600/rrr-esports-logo.png"
+                src="logo.png"
                 alt="Logo" onerror="this.style.display='none';">
             <span id="header-app-name" class="logo-text">BDFireZone</span>
         </div>
@@ -1806,7 +1763,7 @@
         <div class="auth-container">
             <div style="margin-bottom:20px;">
                 <img id="login-app-icon"
-                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2v5v5v5v5v5v5/s1600/rrr-esports-logo.png"
+                    src="logo.png"
                     style="height:60px;">
             </div>
             <h2 class="auth-title">Login</h2>
@@ -1840,7 +1797,7 @@
         <div class="auth-container">
             <div style="margin-bottom:20px;">
                 <img id="reg-app-icon"
-                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2v5v5v5v5v5v5/s1600/rrr-esports-logo.png"
+                    src="logo.png"
                     style="height:60px;">
             </div>
             <h2 class="auth-title">Sign Up</h2>
@@ -3558,21 +3515,6 @@
             });
         }
     </script>
-
-<script id="bd-fire-zone-splash-script">
-(function () {
-    const splash = document.getElementById('bd-fire-zone-splash');
-    if (!splash) return;
-    const started = Date.now();
-    const hide = () => {
-        const wait = Math.max(700 - (Date.now() - started), 0);
-        setTimeout(() => splash.classList.add('hide'), wait);
-    };
-    window.addEventListener('load', hide, { once: true });
-    setTimeout(hide, 1800);
-})();
-</script>
-
 </body>
 
     </html>
